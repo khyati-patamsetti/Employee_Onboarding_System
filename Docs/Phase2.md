@@ -5,7 +5,7 @@
 
 ---
 
-## 1. Salesforce Editions
+## 1. Salesforce Editions 
 
 * Using a **Developer Edition org** .
 * Real-world note: Companies may choose Enterprise or Unlimited editions.
