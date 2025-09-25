@@ -1,0 +1,111 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Employee Onboarding API",
+    "description": "API for managing Employees and Onboarding Tasks",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://mocki.io/v1"
+    }
+  ],
+  "paths": {
+    "/employees": {
+      "get": {
+        "summary": "Get all employees",
+        "operationId": "getEmployees",
+        "responses": {
+          "200": {
+            "description": "List of employees",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Employee"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create new employee",
+        "operationId": "createEmployee",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Employee" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Employee created" }
+        }
+      }
+    },
+    "/tasks": {
+      "get": {
+        "summary": "Get all onboarding tasks",
+        "operationId": "getTasks",
+        "responses": {
+          "200": {
+            "description": "List of tasks",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create new task",
+        "operationId": "createTask",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/Task" }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Task created" }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Employee": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "firstName": { "type": "string" },
+          "lastName": { "type": "string" },
+          "email": { "type": "string" },
+          "status": { "type": "string", "enum": ["Not Started", "In Progress", "Completed"] }
+        }
+      },
+      "Task": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "employeeId": { "type": "string" },
+          "name": { "type": "string" },
+          "dueDate": { "type": "string", "format": "date" },
+          "status": { "type": "string", "enum": ["Pending", "In Progress", "Completed", "Open"] }
+        }
+      }
+    }
+  }
+}
