@@ -45,7 +45,7 @@
 
 ### As-is (imagined from student perspective)
 
-* Emails with offer letters.
+* Emails with offer letters. 
 * Printing/signing contracts physically.
 * IT creates accounts manually.
 * HR uses spreadsheets to track tasks.
