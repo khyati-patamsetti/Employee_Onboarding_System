@@ -1,0 +1,6 @@
+Name,FirstName__c,Last_Name__c,Email__c,Start_Date__c,Onboarding_Status__c
+EMP-1001,John,Doe,john.doe@test.com,2025-01-10,Not Started
+EMP-1002,Sarah,Lee,sarah.lee@test.com,2025-01-15,In Progress
+EMP-1003,Michael,Smith,michael.smith@test.com,2025-01-20,Completed
+EMP-1004,Anna,Brown,anna.brown@test.com,2025-01-25,New
+EMP-1005,David,Wong,david.wong@test.com,2025-02-01,Open
